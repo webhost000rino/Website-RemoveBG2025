@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - ImagePro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #fafbfc;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #64748b;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .cta-button {
+      background: #2563eb;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+
+    .cta-button:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 16px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: #64748b;
+      margin-bottom: 32px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Pricing Section */
+    .pricing-section {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      padding: 32px 16px;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+    }
+
+    .pricing-card {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 24px;
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 2px solid #2563eb;
+    }
+
+    .pricing-card h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 16px;
+    }
+
+    .pricing-card .price {
+      font-size: 48px;
+      font-weight: 800;
+      color: #2563eb;
+      margin-bottom: 16px;
+    }
+
+    .pricing-card .description {
+      font-size: 16px;
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 24px;
+      text-align: left;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: #2c3e50;
+      margin-bottom: 12px;
+    }
+
+    .pricing-features i {
+      color: #059669;
+      font-size: 18px;
+    }
+
+    .cta-button.pricing-cta {
+      background: #059669;
+      padding: 12px 24px;
+      font-size: 16px;
+      min-width: 200px;
+    }
+
+    .cta-button.pricing-cta:hover {
+      background: #047857;
+      transform: translateY(-1px);
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      margin-top: 60px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      padding: 32px 16px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .faq-section h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+    }
+
+    .faq-item h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      font-size: 14px;
+      color: #64748b;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .pricing-section, .faq-section {
+      animation: fadeInUp 0.5s ease;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .cta-button {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 14px;
+        max-width: 90%;
+      }
+
+      .pricing-section, .faq-section {
+        padding: 20px 12px;
+      }
+
+      .pricing-card {
+        padding: 16px;
+      }
+
+      .pricing-card h2 {
+        font-size: 24px;
+      }
+
+      .pricing-card .price {
+        font-size: 36px;
+      }
+
+      .pricing-card .description {
+        font-size: 14px;
+      }
+
+      .pricing-features li {
+        font-size: 12px;
+      }
+
+      .faq-section h2 {
+        font-size: 20px;
+      }
+
+      .faq-item h3 {
+        font-size: 14px;
+      }
+
+      .faq-item p {
+        font-size: 12px;
+      }
+
+      main {
+        padding: 24px 12px;
+      }
+
+      .cta-button.pricing-cta {
+        min-width: 160px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 24px;
+      }
+
+      .hero p {
+        font-size: 12px;
+      }
+
+      .pricing-card .price {
+        font-size: 30px;
+      }
+
+      .cta-button.pricing-cta {
+        min-width: 140px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo"><i class="fas fa-magic"></i> ImagePro</a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html" class="cta-button">Get Started</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Free AI Image Processing for Everyone</h1>
+      <p>Enjoy all of ImagePro’s powerful features, including AI-powered background removal, at no cost. No subscriptions, no hidden fees—just professional-grade image editing for free.</p>
+    </section>
+
+    <section class="pricing-section">
+      <div class="pricing-card">
+        <h2>Free Plan</h2>
+        <div class="price">$0</div>
+        <p class="description">Access all ImagePro features completely free, forever. Transform your images with enterprise-grade AI tools without spending a dime.</p>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> AI Background Removal (any color or pattern)</li>
+          <li><i class="fas fa-check-circle"></i> Image Enhancement (sharpening, noise reduction)</li>
+          <li><i class="fas fa-check-circle"></i> Smart Compression (quality-preserving)</li>
+          <li><i class="fas fa-check-circle"></i> Content-Aware Cropping</li>
+          <li><i class="fas fa-check-circle"></i> Unlimited Image Processing</li>
+          <li><i class="fas fa-check-circle"></i> Client-Side Processing for Privacy</li>
+          <li><i class="fas fa-check-circle"></i> Support for JPG, PNG, WEBP (up to 10MB)</li>
+        </ul>
+        <a href="index.html" class="cta-button pricing-cta">Start Editing Now</a>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>Is ImagePro really free?</h3>
+        <p>Yes, ImagePro is 100% free to use. All features, including AI background removal, enhancement, compression, and cropping, are available at no cost with no usage limits.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Are there any hidden fees or subscriptions?</h3>
+        <p>No. ImagePro is fully free, with no subscriptions or hidden fees. We believe in making professional image editing accessible to everyone.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is my data safe?</h3>
+        <p>Absolutely. All image processing happens in your browser, so your images are never uploaded to any server. Your data stays private and secure.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What image formats are supported?</h3>
+        <p>ImagePro supports JPG, PNG, and WEBP formats, with a maximum file size of 10MB. Outputs are saved as PNG to preserve transparency.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I use ImagePro on mobile devices?</h3>
+        <p>Yes! ImagePro is responsive and supports touch gestures, such as swiping up to upload images, making it easy to use on phones and tablets.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
